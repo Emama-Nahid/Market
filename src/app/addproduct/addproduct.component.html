@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <!--Header-->
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <a href="/"class="nav-brand text-dark">
+                        Add New Product
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <!--/Header-->
+    <!--Main Site-->
+    <main id="site-mainr">
+            <div class="container">
+                <div class="box-nav d-flex justify-between">
+                    <div class="filter">
+                        <a href="/products"><i class="fas fa-angle-double-left"></i>Product List</a>
+                    </div>
+                </div>
+                <div class="form-title text-center">
+                    <h2 class="text-dark">Add Product</h2>
+                    <span class="text-light">Use the below form to add a new product</span>
+                </div>
+
+                <form method="POST" id="update_user">
+                    <div class="new_user">
+                        <div class="form-group">
+                            <label for="name" class="text-light">Product Name</label>
+                            <input type="hidden" name="id" value="100000">
+                            <input type="text" name="name" value="" placeholder="Sample Product 1">
+                        </div>
+                        <div class="form-group">
+                            <label for="Price" class="text-light">Amount</label>
+                            <input type="text" name="amount" value="" placeholder="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="Amount" class="text-light">Price</label>
+                            <input type="text" name="price" value="" placeholder="1000">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender" class="text-light">Is Best Achive</label>
+                            <div class="radio inline">
+                                <input type="radio" id="radio-2" name="is best achive" value="Yes">
+                                <label for="radio-2" class="radio-label">Yes</label>
+                            </div>
+                            <div class="radio inline">
+                                <input type="radio" id="radio-3" name="is best achive" value="No">
+                                <label for="radio-3" class="radio-label">No</label>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn text-dark update">Save</button>
+                        </div>
+                    </div>    
+                </form>
+            </div>
+
+    </main>
+    <!--/Main Site-->
+
+
+</body>
+</html>
