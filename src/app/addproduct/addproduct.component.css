@@ -4,7 +4,7 @@
     --dark:#2c2104;
     --lght:#2b2d42;
     --border:#dee2e6;
-    --border-btn:#edf2f4;
+    --border-btn:#3e4d53;
 }
 
 *{
@@ -58,7 +58,7 @@ margin: auto ;
 }
 
 .text-gradient{
-    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    background: linear-gradient(to right, #3c383f, #251f0a);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -225,7 +225,7 @@ table{
 
 #update_user .form-group .btn:hover,
 #add_user .form-group .btn:hover{
-    background-color: var(--dark);
+    background-color: #383e41;
     color: var(--border);
 }
 

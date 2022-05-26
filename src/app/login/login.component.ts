@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,6 +20,8 @@ export class LoginComponent implements OnInit {
     const target = event.target
     const username = target.querySelector('#username').value
     const password = target.querySelector('#password').value
+
+    console.log(username,password)
 
     this.Auth.getUserDetails(username,password)
     console.log(event)

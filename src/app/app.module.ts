@@ -25,6 +25,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ProductsComponent } from './products/products.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { ProductupdateComponent } from './productupdate/productupdate.component';
+import { ProductsService } from './products/products.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { ProductupdateComponent } from './productupdate/productupdate.component'
     ProductupdateComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -56,7 +59,7 @@ import { ProductupdateComponent } from './productupdate/productupdate.component'
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddproductComponent implements OnInit {
 
+  
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(this.http.post<any>('http://localhost:3000/all-products')): void {
   }
 
 }
