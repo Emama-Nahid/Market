@@ -8,5 +8,10 @@ export class RegistrationService{
     
     constructor(private http:HttpClient) { }
 
+    addUser(data:any) {
+       return this.http.post('http://localhost:3000/user',data)
+       
+      }
+
     
 }
