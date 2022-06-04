@@ -5,12 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './addproduct.component.html',
   styleUrls: ['./addproduct.component.css']
 })
-export class AddproductComponent implements OnInit {
+export class AddproductComponent {
 
   
   constructor() { }
 
-  ngOnInit(this.http.post<any>('http://localhost:3000/all-products')): void {
-  }
+  
 
 }

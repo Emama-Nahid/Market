@@ -4,7 +4,7 @@ import { Inject, Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class DashService {
 
   constructor(private http:HttpClient) { }
 
@@ -12,4 +12,3 @@ export class ProductsService {
     return this.http.get('http://localhost:3000/products')
   }
 }
-
