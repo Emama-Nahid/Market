@@ -1,27 +1,27 @@
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-list cols="10" rowHeight="100px">
     <mat-grid-tile *ngFor="let card of cards" [colspan]="3" [rowspan]="2">
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            {{card.productName}}
-            {{card.price}}
-            {{card.pieces}}
-            {{card.isBestArchive}}
+            <p>Product Name: {{card.productName}}</p>
+            <p>Price: {{card.price}}<br>
+            <p>Available Quantity: {{card.pieces}}
+
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
+              <button mat-menu-item>Add to Cart</button>
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div></div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>

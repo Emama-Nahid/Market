@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddProductsService } from './addproduct.service';
 
 @Component({
   selector: 'app-addproduct',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddproductComponent {
 
-  
-  constructor() { }
+  constructor(private addproduct: AddProductsService) { }
 
-  
+
+  onClickSubmit(json: any) {
+    if(json.isBestArchive == 'yes') {
+      json.isBestArchive = true;
+    } else {
+      json.isBestArchive = false;
+    }
+    this.addproduct.addProduct(json).subscribe(res => {
+      console.log(res);
+    })
+  }
 
 }

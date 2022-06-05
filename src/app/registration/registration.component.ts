@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterModel } from '../models/register.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { RegistrationService } from './registration.service';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +13,7 @@ export class RegistrationComponent implements OnInit {
   registerForm!: FormGroup;
   hide = true; 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private registrationService: RegistrationService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -29,6 +30,12 @@ export class RegistrationComponent implements OnInit {
         Validators.maxLength(30)
       ]]
     });
+  }
+
+  doRegistration(data: any) {
+    this.registrationService.register(data).subscribe(r => {
+      console.log(r);
+    })
   }
 
 }

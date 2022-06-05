@@ -35,34 +35,33 @@
                     <span class="text-light">Use the below form to add a new product</span>
                 </div>
 
-                <form action="/create-product" method="POST" id="update_user">
+                <form #addproduct="ngForm" (ngSubmit)="onClickSubmit(addproduct.value)" action="/create-product" method="POST" id="update_user">
                     <div class="new_user">
                         <div class="form-group">
                             <label for="name" class="text-light">Product Name</label>
-                            <input type="hidden" name="id" value="100000">
-                            <input type="text" name="name" value="" placeholder="Sample Product 1">
+                            <input type="hidden" name="id" ngModel value="100000">
+                            <input type="text" name="productName" ngModel value="" placeholder="Sample Product 1">
                         </div>
                         <div class="form-group">
-                            <label for="Price" class="text-light">Amount</label>
-                            <input type="text" name="amount" value="" placeholder="10">
+                            <label for="Amount" class="text-light">Amount</label>
+                            <input type="text" ngModel name="pieces" value="" placeholder="10">
                         </div>
                         <div class="form-group">
-                            <label for="Amount" class="text-light">Price</label>
-                            <input type="text" name="price" value="" placeholder="1000">
+                            <label for="Price" class="text-light">Price</label>
+                            <input type="text" ngModel name="price" value="" placeholder="1000">
                         </div>
                         <div class="form-group">
                             <label for="gender" class="text-light">Is Best Achive</label>
                             <div class="radio inline">
-                                <input type="radio" id="radio-2" name="is best achive" value="Yes">
+                                <input type="radio" ngModel id="radio-2" name="isBestArchive" value="Yes">
                                 <label for="radio-2" class="radio-label">Yes</label>
                             </div>
                             <div class="radio inline">
-                                <input type="radio" id="radio-3" name="is best achive" value="No">
+                                <input type="radio" ngModel id="radio-3" name="isBestArchive" value="No">
                                 <label for="radio-3" class="radio-label">No</label>
                             </div>
                         </div>
                          
-                        
                         <div class="form-group">
                             <button mat-button type="submit" class="btn text-dark update">Save</button>
                         </div>

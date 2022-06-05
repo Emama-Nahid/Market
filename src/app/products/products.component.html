@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Application</title>
+    <title>Market Application</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 
 <body>
+    <div *ngIf="renderComponent==true; else notauthorized">
     <!--Header-->
     <header id="header">
         <nav>
@@ -63,13 +64,20 @@
                         </tr>
                     </tbody>
                 </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
             </form>
         </div>
+        
 
     </main>
     <!--/Main Site-->
+</div>
 
-
+<ng-template #notauthorized>
+<h1>You're not authorized</h1> 
+  </ng-template>
+  
+  
 </body>
 
 </html>

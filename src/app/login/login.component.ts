@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoginService } from './login.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -10,21 +11,15 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   Auth: any;
 
-  constructor() { }
+  constructor(private loginService: LoginService, 
+    private snackBar:MatSnackBarModule) { }
 
   ngOnInit(): void {
   }
 
-  loginUser(event: { preventDefault: () => void; target: any; }) {
-    event.preventDefault()
-    const target = event.target
-    const username = target.querySelector('#username').value
-    const password = target.querySelector('#password').value
-
-    console.log(username,password)
-
-    this.Auth.getUserDetails(username,password)
-    console.log(event)
+  onLoginSubmit(values: any) {
+    this.loginService.doLogin(values).subscribe((r:any) => {
+      localStorage.setItem('token', r.token);
+    })
   }
-
 }

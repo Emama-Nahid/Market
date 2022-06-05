@@ -1,25 +1,25 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
     <mat-card fxFlex="25">
         <mat-toolbar color="primary">Register</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="reg-from">
+        <form #regForm="ngForm" (ngSubmit)="doRegistration(regForm.value)" fxLayoutAlign="stretch" fxLayout="column" class="reg-from">
             <mat-form-field >
               <mat-label>Name</mat-label>
-              <input matInput placeholder="Enter Your Name" >
+              <input ngModel name="name" matInput placeholder="Enter Your Name" >
             </mat-form-field>
             <mat-form-field >
               <mat-label>User Name</mat-label>
-              <input matInput placeholder="Enter Your Name" >
+              <input ngModel name="username" matInput placeholder="UserName" >
             </mat-form-field>
 
             <mat-form-field >
               <mat-label>Password</mat-label>
-              <input matInput type="password" placeholder="Enter Your Password" >
+              <input ngModel name="password" matInput type="password" placeholder="Enter Your Password" >
             </mat-form-field>
             
 
             <mat-form-field >
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Enter Your Email" >
+                <input ngModel name="email" matInput placeholder="Enter Your Email" >
               </mat-form-field>
           
 

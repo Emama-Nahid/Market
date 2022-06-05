@@ -27,6 +27,9 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { ProductupdateComponent } from './productupdate/productupdate.component';
 import { ProductsService } from './products/products.service';
 import { HttpClientModule } from '@angular/common/http';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +60,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FlexLayoutModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule,
+    MatSnackBarModule
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
